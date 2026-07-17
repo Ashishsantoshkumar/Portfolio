@@ -119,7 +119,7 @@ export default function Hero({ showVisual }) {
           </div>
 
           {/* Right Content - Animated profile visual */}
-          <div className="hidden md:flex items-center justify-center min-h-96">
+          <div className="flex items-center justify-center min-h-80 md:min-h-96">
             {showVisual && <ProfileVisual variant="hero" />}
           </div>
         </div>

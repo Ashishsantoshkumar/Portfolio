@@ -16,7 +16,8 @@ import image from "./image/profile.jpg";
 // Leave it empty to keep the placeholder — no other change is required,
 // every animation below targets this same container.
 // ---------------------------------------------------------------------------
-const PROFILE_IMAGE_SRC = 'profile.jpg';
+const PROFILE_IMAGE_SRC = '/assets/profile.jpg';
+
 
 const PARTICLES_DATA = [
   { id: 0, left: 12, size: 4, delay: 0.5, duration: 6, tone: 'bg-primary/50' },

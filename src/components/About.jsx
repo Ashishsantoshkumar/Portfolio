@@ -51,7 +51,7 @@ export default function About({ showVisual, visualAnchorRef }) {
           </div>
 
           {/* Right - Shared animated profile visual */}
-          <div ref={visualAnchorRef} className="hidden md:flex items-center justify-center min-h-96">
+          <div ref={visualAnchorRef} className="flex items-center justify-center min-h-80 md:min-h-96">
             {showVisual && <ProfileVisual variant="about" />}
           </div>
         </div>
