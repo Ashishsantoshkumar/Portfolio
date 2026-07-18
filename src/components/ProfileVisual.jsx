@@ -7,8 +7,13 @@ import {
   useReducedMotion,
 } from 'framer-motion';
 import { Camera, Layers, Atom, GitBranch, Box } from 'lucide-react';
-import image from "./image/profile.jpg";
+import heroImage from "./image/avatar.png";
+import aboutImage from "./image/profile.jpg";
 
+const imagesByVariant = {
+  hero: heroImage,
+  about: aboutImage,
+};
 
 // ---------------------------------------------------------------------------
 // Drop your real photo in `client/public` and point this at it, e.g.
@@ -58,7 +63,13 @@ const glassCards = [{ text: '🚀 Building Projects', pos: '-top-5 -right-4 md:-
 
 export default function ProfileVisual({ variant }) {
   const reduceMotion = useReducedMotion();
-  const { wrapper, iconBubble, iconSize } = sizeConfig[variant];
+
+  // Prevent runtime crash when `variant` is missing/invalid.
+  // (Common when the parent forgets to pass a prop or passes a wrong value.)
+  const safeVariant = variant === 'hero' || variant === 'about' ? variant : 'hero';
+
+  const { wrapper, iconBubble, iconSize } = sizeConfig[safeVariant];
+  const image = imagesByVariant[safeVariant];
 
 
 
@@ -112,18 +123,6 @@ export default function ProfileVisual({ variant }) {
         }`}
       />
 
-      {/* Rotating gradient ring */}
-      <div
-        aria-hidden
-        className="absolute inset-[-6%] rounded-[2rem] p-[2px] opacity-40"
-        style={{
-          background:
-            'conic-gradient(from 0deg, var(--color-primary), var(--color-secondary), var(--color-primary))',
-        }}
-      >
-        <div className="w-full h-full rounded-[2rem]" />
-      </div>
-
       {/* Particles */}
       {!reduceMotion &&
         PARTICLES_DATA.map((p) => (
@@ -143,7 +142,7 @@ export default function ProfileVisual({ variant }) {
 
       {/* Core photo card */}
       <motion.div
-        transition={{ layout: { type: 'spring', stiffness: 90, damping: 20, mass: 0.7 } }}
+        transition={{ layout: { type: 'spring', stiffness: 95, damping: 25, mass: 0.7 } }}
         className={`relative z-10 ${wrapper} rounded-3xl border border-white/40 shadow-2xl backdrop-blur-sm overflow-hidden ${
           reduceMotion ? '' : 'animate-float-slow'
         }`}
@@ -188,21 +187,7 @@ export default function ProfileVisual({ variant }) {
         </motion.div>
       ))}
 
-      {/* Glass info cards */}
-      {glassCards.map(({ text, pos, delay }) => (
-        <motion.div
-          key={text}
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3 + delay * 0.2, duration: 0.5 }}
-          className={`hidden lg:block absolute ${pos} z-20 rounded-xl bg-white/70 backdrop-blur-md border border-white/50 shadow-lg px-3 py-2 text-xs font-semibold text-foreground ${
-            reduceMotion ? '' : 'animate-float-slow'
-          }`}
-          style={reduceMotion ? undefined : { animationDelay: `${delay}s` }}
-        >
-          {text}
-        </motion.div>
-      ))}
+      
     </div>
   );
 }
