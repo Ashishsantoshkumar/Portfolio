@@ -39,7 +39,7 @@ export default function About({ showVisual, visualAnchorRef }) {
 
             {/* Resume Button */}
             <div className="pt-4">
-              <a href="https://drive.google.com/file/d/1TESAdr5PgPftoeRuW_0TVxrKzS6tMp6M/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+              <a href="https://drive.google.com/file/d/1yCfRNKv5vBNVT_2y6xtHOkUpitUlhV3K/view?usp=sharing" target="_blank" rel="noopener noreferrer">
                 <Button className="bg-primary hover:bg-primary/90 text-white group">
                   Download Resume
                   <svg className="ml-2 w-4 h-4 group-hover:translate-y-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
