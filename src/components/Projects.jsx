@@ -128,7 +128,7 @@ export default function Projects() {
         </div>
 
         <div className="text-center mt-12 pt-8 border-t border-border">
-          <a href="#" className="inline-block">
+          <a href="https://github.com/Ashishsantoshkumar?tab=repositories" className="inline-block" target="_blank" >
             <Button size="lg" className="bg-primary hover:bg-primary/90 text-white group">
               View All Projects
               <svg className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
