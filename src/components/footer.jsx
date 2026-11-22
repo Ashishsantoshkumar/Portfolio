@@ -179,9 +179,9 @@ export default function Footer() {
           {/* Brand */}
           <div className="space-y-2">
             <div className="flex items-center gap-2">
-              <div className="w-7 h-7 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center font-bold text-sm">
+              {/* <div className="w-7 h-7 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center font-bold text-sm">
                 ✓
-              </div>
+              </div> */}
               <span className="text-base font-bold">Ashish</span>
             </div>
             <p className="text-sm text-white/70 leading-snug">
